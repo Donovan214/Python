@@ -1,8 +1,10 @@
 
-
+test_times = ["Breakfast", "Lunch", "Dinner", "Bedtime"]
 times_of_day = ["Breakfast", "Lunch", "Dinner", "Bedtime"]
-
+sugars = []
 blood_sugar_levels = []
+
+
 for time in times_of_day:
     level = input(f"Enter your blood sugar level for {time}: ")
     blood_sugar_levels.append([time, level])

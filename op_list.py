@@ -5,6 +5,11 @@ if 2008 in delinquent_accounts:
 else:
     print("The account number 2008 is not delinquent.")
 
+# Check to see index of 2008
+for i in range(len(delinquent_accounts)):
+    if delinquent_accounts[i] == 2008:
+        print("The account number 2008 is at indew", i) #1
+
 # Define the list of items needed to buy
 needed_list = ["Apples", "Lettuce", "Bread", "Milk", "Peanut Butter"]
 
@@ -32,11 +37,3 @@ while got_it != "done":
         print("You are done!")
         # Set the variable to 'done' to exit the loop
         got_it = "done"
-
-# check to see index of 2008
-
-for i in range(len(delinquent_accounts)):
-    if delinquent_accounts[i] == 2008:
-        print("The account number 2008 is at index", i)  # 1
-
-
