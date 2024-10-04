@@ -12,5 +12,5 @@ total = 0
 for heart in heart_rate:
     total += heart[1]
 # the average of your heart rate
-average = round(total / len(heart))
+average = round(total / len(heart_rate))
 print("Average heart rate today: ", average)
