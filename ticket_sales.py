@@ -1,4 +1,9 @@
-"""Ticket sales and Seat takens away"""
+"""
+Ticket sales and Seat takens away
+
+https://chatgpt.com/share/67004f56-767c-8003-bde6-4740f51a2103
+Used chat to help find the error in code
+"""
 
 # the number of tickets for the event
 tickets = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12",
