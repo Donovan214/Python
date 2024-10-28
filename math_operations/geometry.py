@@ -5,7 +5,6 @@ Finding the area of a rectangle, triangle, and circle
 """
 
 
-from math_operations.main_calculator import calculator
 
 def main():
     
@@ -16,9 +15,9 @@ def main():
     radius = float(input("Please enter the radius of the circle: "))
 
 
-    rectangle_area = calculator(length * width)
-    triangle_area = calculator(0.5 * base * height)
-    circle_area = calculator(3.14 * (radius ** 2 ))
+    rectangle_area = (length * width)
+    triangle_area = (0.5 * base * height)
+    circle_area = (3.14 * (radius ** 2 ))
     
     print(f"The area of the {rectangle_area} is: ")
     print(f"The area of the {triangle_area} is: ")
