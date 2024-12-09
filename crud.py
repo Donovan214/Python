@@ -61,12 +61,51 @@ def read():
 
 
 def update():
-    print("Updating an entry")
+    customer = check()
+    if not customer:
+        print("Customer list is empty. Please create an entry first.")
+        return
+
+    lname = input(
+        "Please enter the last name of the entry you want to update: ").capitalize()
+    matching_entries = [entry for entry in customer if lname in entry]
+
+    if not matching_entries:
+        print(f"No entry found with the last name '{lname}'.")
+        return
+
+    print("\nMatching Entries:")
+    for i, entry in enumerate(matching_entries, start=1):
+        print(f"{i}. {entry.strip()}")
+
     try:
-        print("Please update any of the following information.")
-    except FileNotFoundError:
-        print("Customer list does not exist. Create a new file.")
-        return []
+        choice = int(
+            input("\nEnter the number of the entry you want to update: "))
+        if 1 <= choice <= len(matching_entries):
+            index = customer.index(matching_entries[choice - 1])
+            print("\nUpdating the following entry:")
+            print(matching_entries[choice - 1].strip())
+
+            # Get updated details from the user
+            fname = input("Enter new first name (leave blank to keep current): ").capitalize(
+            ) or matching_entries[choice - 1].split(",")[0].strip()
+            lname = input("Enter new last name (leave blank to keep current): ").capitalize(
+            ) or matching_entries[choice - 1].split(",")[1].strip()
+            phone = input(
+                "Enter new phone (format: 111-111-1111, leave blank to keep current): ") or matching_entries[choice - 1].split(",")[2].strip()
+            email = input(
+                "Enter new email (leave blank to keep current): ") or matching_entries[choice - 1].split(",")[3].strip()
+
+            # Update the entry
+            updated_entry = f"{fname}, {lname}, {phone}, {email}\n"
+            customer[index] = updated_entry
+
+            save(customer)
+            print("\nEntry updated successfully.")
+        else:
+            print("Invalid selection. Please try again.")
+    except ValueError:
+        print("Invalid input. Please enter a number.")
 
 
 def find():
